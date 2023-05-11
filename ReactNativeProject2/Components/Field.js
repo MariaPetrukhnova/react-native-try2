@@ -6,53 +6,33 @@ import { useState } from "react";
 const Field = (props) => {
     const [isFocused, setIsFocused] = useState('false');
     const [isBlured, setIsBlured] = useState('true');
-    const { name } = props;
+    const { onChangeField } = props;
 
-    if (name !== 'password') {
-        return (
-            <TextInput
-                onFocus={() => { setIsFocused(true); setIsBlured(false) }}
-                onBlur={() => { setIsFocused(false); setIsBlured(true) }}
-                {...props}
-                style={{
-                    borderRadius: 8,
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                    padding: 16,
-                    marginBottom: 16,
-                    backgroundColor: isFocused === true ? whiteContrastColor : secondaryBgColor,
-                    // outlineColor: isFocused === true ? orangeAccent : borderColor,
-                    borderColor: isFocused === true ? orangeAccent : borderColor,
-                    width: '100%',
-                    fontSize: 14,
-                    fontFamily: mainFontFamily,
-                    lineHeight: 19,
-                }}
-            />
-        )
-    } else {
-                return (
-            <TextInput
-                onFocus={() => { setIsFocused(true); setIsBlured(false) }}
-                onBlur={() => { setIsFocused(false); setIsBlured(true) }}
-                {...props}
-                style={{
-                    borderRadius: 8,
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                    padding: 16,
-                    backgroundColor: isFocused === true ? whiteContrastColor : secondaryBgColor,
-                    // outlineColor: isFocused === true ? orangeAccent : borderColor,
-                    borderColor: isFocused === true ? orangeAccent : borderColor,
-                    width: '100%',
-                    fontSize: 14,
-                    fontFamily: mainFontFamily,
-                    lineHeight: 19,
-                }}
-            />
-        )
+    const handleInput = (text) => {
+        onChangeField(text)
     }
 
+    return (
+        <TextInput
+            onChangeText={handleInput}
+            {...props}
+            style={{
+                borderRadius: 8,
+                borderStyle: 'solid',
+                borderWidth: 1,
+                padding: 16,
+                backgroundColor: isFocused === true ? whiteContrastColor : secondaryBgColor,
+                borderColor: isFocused === true ? orangeAccent : borderColor,
+                width: '100%',
+                fontSize: 14,
+                fontFamily: mainFontFamily,
+                lineHeight: 19,
+                marginBottom: 16,
+            
+            }}
+        />
+    )
 };
+
 
 export default Field;

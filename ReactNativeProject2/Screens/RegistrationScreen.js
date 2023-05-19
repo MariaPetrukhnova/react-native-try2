@@ -19,6 +19,7 @@ const RegistrationView = (props) => {
     const onSignup = () => {
         const userObj = { name: login, email: email, password: password };
         console.log(userObj);
+        props.navigation.navigate("Home");
     };
 
     return (

@@ -1,39 +1,22 @@
-import { View, StyleSheet, Text } from "react-native";
-import Background from "../Components/Background";
-import Btn from "../Components/Btn";
-import {orangeAccent, whiteContrastColor, mainFontFamily, titleFontFamily, } from '../Components/Constants'
+import { View, StyleSheet } from "react-native";
 
-const HomeView = (props) => {
-    const { container, title } = styles;
-    return (
-    <Background>
-        <View style={container}>
-            <Text style={title}>Welcome to MemoryPic Application</Text>
-            <Btn btnLabel="Login" bgColor={orangeAccent} textColor={whiteContrastColor} textFont={mainFontFamily}
-                    Press={() => props.navigation.navigate("Login")}
-            />
-            <Btn btnLabel="Signup" bgColor={orangeAccent} textColor={whiteContrastColor} textFont={mainFontFamily}
-                    Press={() => props.navigation.navigate("Signup")}
-            />
-        </View>
-    </Background>
+// import MyTabs from "../Components/TabNavigator";
+import MyTabs from "../Components/TabNavigator2";
+
+const HomeView = () => {
+    const { container } = styles;
+    return (<>
+    <View style={container}/>
+    <MyTabs/>
+    </>
     )
 };
 
-
 const styles = StyleSheet.create({
     container: {
-        height: '100%',
-        paddingHorizontal: 20,
-        paddingVertical: 100,
-        alignItems: 'stretch'
+        marginTop: 44,
+
     },
-    title: {
-        fontSize: 30,
-        fontFamily: titleFontFamily,
-        textAlign: 'center',
-        marginBottom: 300
-    }
 });
 
 export default HomeView;

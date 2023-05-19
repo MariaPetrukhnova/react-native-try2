@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, Button, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Platform, Pressable, TouchableOpacity} from "react-native";
 import Background from "../Components/Background";
-import { titleFontFamily, orangeAccent, whiteContrastColor, mainFontFamily, mainFontColor, servicesText, secondaryBgColor, borderColor } from "../Components/Constants";
+import { titleFontFamily, orangeAccent, whiteContrastColor, mainFontFamily, mainFontColor, servicesText } from "../Components/Constants";
 import Field from "../Components/Field";
 import RelinkText from "../Components/relinkText";
 import { useTogglePasswordVisibility } from "../hooks/useTogglePasswordVisibility";
@@ -17,6 +17,7 @@ const LoginView = (props) => {
     const onLogin = () => {
         const userObj = { email: email, password: password };
         console.log(userObj);
+        props.navigation.navigate("Home");
     };
 
 

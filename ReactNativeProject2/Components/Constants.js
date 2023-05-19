@@ -7,3 +7,5 @@ export const titleFontFamily = 'Roboto_500Medium';
 export const secondaryBgColor = '#F6F6F6';
 export const servicesText = '#1B4371';
 export const borderColor = '#E8E8E8';
+export const additionalGray = '#BDBDBD';
+export const tabIconsColor = 'rgba(33, 33, 33, 0.8)';

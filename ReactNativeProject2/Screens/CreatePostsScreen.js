@@ -4,16 +4,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { IconButton } from "@react-native-material/core";
 import { useNavigation } from '@react-navigation/native';
 
-const PostsView = () => {
+const CreateCreatePostsView = () => {
     const { container, header, headerTitle, logoutIconBtn, headerIcon } = styles;
     const navigation = useNavigation();
     return (
         <View>
             <View style={header}>
-                <Text style={headerTitle}>Posts</Text>
                 <View style={headerIcon}>
-                    <IconButton onPress={()=>navigation.navigate("Start")} icon={props => <Icon name="logout" {...props} style={logoutIconBtn} />} />
+                    <IconButton onPress={()=>navigation.navigate("Posts")} icon={props => <Icon name="arrow-back" {...props} style={logoutIconBtn} />} />
                 </View>
+                <Text style={headerTitle}>Create post</Text>
             </View>
             <View style={container}></View>
 
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     headerIcon: {
         position: 'absolute',
         top: 0,
-        left: '90%',
+        left: 0,
         width: 24,
         height: 24,
     },
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PostsView;
+export default CreateCreatePostsView;
